@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bingo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </script>
+</head>
+
+<body>
+<div id="mainDiv">
+    <h1>Bingo creater</h1>
+    <div id="createDiv">
+        <input type="text" placeholder="title" id="titleSelect" class="tooltip" title="Title for each card">
+        <input placeholder="size" id="sizeSelect" title="size of the matrix, e.g. 3 for 3x3">
+        <input placeholder="amount" id="amountSelect" title="amount of card that should be  created">
+        <select name="type" id="typeSelect" onchange="showInput()">
+            <option value="numbers">Numbers</option>
+            <option value="text">Text</option>
+        </select>
+        <div id="selectNumber">
+            <input placeholder="min" id="selectnumberMin" title="the lower minimum of the possible numbers">
+            <input placeholder="max" id="selectnumberMax" title="the maximum of the possible numbers">
+        </div>
+        <div id="selectText">
+            <textarea id="selectTextField" placeholder="each entry in a new line"
+                      title="Use each line for an entry"></textarea>
+        </div>
+        <button onclick="createBingo()">create bingo</button>
+        <button onclick="print()">Print</button>
+    </div>
+    <i class='bx bx-slider' onclick="showSettings()"></i>
+    <div id="settingsDiv">
+        <label for="setOuterBorder">Outer Border:
+            <input type="range" min="1" max="10" value="5" id="setOuterBorder" onchange="update()">
+        </label>
+
+        <label for="setInnerBorder">Inner Border:
+            <input type="range" min="0" max="10" value="2" id="setInnerBorder" onchange="update()">
+        </label>
+        <label for="setTitleSize">Title size
+            <input type="range" min="1" max="100" value="28" id="setTitleSize" onchange="update()">
+        </label>
+
+        <label for="setPadding">Padding:
+            <input type="range" min="0" max="50" value="5" id="setPadding" onchange="update()">
+        </label>
+
+
+        <label for="setBoxSize">Box size
+            <input type="range" min="10" max="200" value="50" id="setBoxSize" onchange="update()">
+        </label>
+
+        <label for="setMargin">Margin
+            <input type="range" min="0" max="50" value="5" id="setMargin" onchange="update()">
+        </label>
+
+    </div>
+</div>
+<div id="drawDiv">
+
+</div>
+<script src="script.js" async defer></script>
+
+<footer id="footer">
+    <a href="https://github.com/beniox" target="_blank">
+        <i class='bx bxl-github' ></i> View my GitHub
+    </a>
+</footer>
+</body>
+
+</html>
