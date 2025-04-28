@@ -207,8 +207,9 @@ body {
     align-items: center;
     text-align: center;
     padding: 5px;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
     word-break: break-word;
+    hyphens: manual;
     hyphens: auto;
     line-height: 1.2;
     flex-direction: column;
